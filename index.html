@@ -1,131 +1,154 @@
 <!doctype html>
 <html>
-	<head>
-		<title>scm-extract para Java</title>
-		<link rel="shortcut icon" href="img/file-code-solid.svg" >
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/style.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
-	</head>
-	<body>
-		<nav class="navbar ">
-    		<div class="container-fluid">
-       			<div class="navbar-header">
-       				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-           				<span class="icon-bar"></span>
-           				<span class="icon-bar"></span>
-           				<span class="icon-bar"></span>
-       				</button>
-       			</div>
-       			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-       			<ul class="nav navbar-nav navbar-left">
-       				<img src="img/file-code-solid.svg" height="45px" width="45px">
-       			</ul>
-          			<ul class="nav navbar-nav navbar-right">
-            			<li><a class="navlink" href="#home">O que é ?</a></li>
-            			<li><a class="navlink" href="#start">Getting Started</a></li>
-           				<li><a class="navlink" href="#exemplos">Exemplos de uso</a></li>
-            			<li><a class="navlink" href="#novidades">Novidades</a></li>
-            			<li><a class="navlink" href="#desenvolvedores">Desenvolvedores</a></li>
-            			<li><a class="navlink" href="#contato">Contato</a></li>
-          			</ul>
-        		</div>
-      		</div>
-    	</nav>	
-			
-		<div class="container">
-			<div class="row ">					
-				<div class="col-md-10 col-md-offset-1 conteudo">
-				<h1>SCM-Extract para Java</h1></br></br></br>
-					
-					<h3 id="home">O que é ?</h3>
-					<hr class="divider"/>
-					
-					<p class="text-justify">O scm-extract é uma ferramenta desenvolvida em Java que visa a automatização do processo de checkout de projetos de software, bem como de suas versões, a partir de repositórios online de códigos, como por exemplo o Github. 
-					Esta ferramenta surgiu a partir da necessidade de se obter várias versões de um projeto de software de forma mais rápida, para que assim pudessem ser realizadas pesquisas sobre tais versões.
-					O scm-extract atualmente conta com a integração com dois SCM (gerência de configuração de software, do inglês, Software Configuration Management), Git e Svn. Em suas próximas versões contará com a integração ao Mercurial.    </p>
-						
-					<h3 id="start">Getting Started</h3>
-					<hr class="divider"/>
-					
-					Clone o repositorio
-					<pre><code>git clone https://github.com/gpes/scm-extract</code></pre><br>
-					<h4>Usando maven</h4><br>
-					Execute
-					<pre><code>mvn clean install</code></pre><br>
-					Adicione como dependencia local
-					<pre><code>mvn install:install-file -Dfile=./target/scm-extract-1.0.jar -DgroupId=br.ifpb.edu.gpes -DartifactId=scm-extract -Dversion=1.0 -Dpackaging=jar</code></pre><br>
-					Abra um projeto na IDE e adicione a dependência do <strong>scm-extract</strong> no pom.xml
-					<pre><code>&ltdependency&gt
-	&ltgroupId&gtbr.ifpb.edu.gpes&lt/groupId&gt
- 	&ltartifactId&gtscm-extract&lt/artifactId&gt
- 	&ltversion&gt1.0&lt/version&gt
-&lt/dependency&gt</pre></code>
 
-					
-					<h3 id="exemplos">Exemplos de uso</h3>
-					<hr class="divider"/>
-					
-						<ul>
-							<li>
-							<a href="https://github.com/gpes/scm-extract/blob/master/src/main/java/br/edu/ifpb/scm/api/examples/CloneExample.java" target="_blank">
-							Clonando um repositório remoto</a></li>
+<head>
+    <title>False Pattern Detector</title>
+    <link rel="shortcut icon" href="img/file-code-solid.svg">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+</head>
 
-							<li><a href="https://github.com/gpes/scm-extract/blob/master/src/main/java/br/edu/ifpb/scm/api/examples/ReferenceRepositoryExample.java" target="_blank">Recuperando um repositório local</a></li>
+<body>
+    <nav class="navbar ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <img src="img/file-code-solid.svg" class="icon" height="45px" width="45px">
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="navlink" href="#home">O que é?</a></li>
+                    <li><a class="navlink" href="#start">Getting Started</a></li>
+                    <!-- <li><a class="navlink" href="#exemplos">Exemplos de uso</a></li> -->
+                    <!-- <li><a class="navlink" href="#novidades">Novidades</a></li> -->
+                    <li><a class="navlink" href="#desenvolvedores">Desenvolvedores</a></li>
+                    <li><a class="navlink" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-							<li><a href="https://github.com/gpes/scm-extract/blob/master/src/main/java/br/edu/ifpb/scm/api/examples/CommitsInfoExample.java" target="_blank">Exibindo as informações de commits</a></li>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-10 col-md-offset-1 conteudo">
+                <h1>False Pattern Detector</h1></br>
 
-							<li><a href="https://github.com/gpes/scm-extract/blob/master/src/main/java/br/edu/ifpb/scm/api/examples/FilesChangedExamples.java" target="_blank">Exibindo quais arquivos foram modificados entre as versões</a></li>
+                <h3 id="home">O que é?</h3>
+                <hr class="divider" />
 
-							<li><a href="https://github.com/gpes/scm-extract/blob/jair_anderson/src/main/java/br/edu/ifpb/scm/api/examples/DiffVersionsExample.java" target="_blank">Exibindo as modificações entre as versões dos arquivos</a></li>
+                <p class="text-justify">
+                    Um falso padrão de projeto ocorre quando os vocabulários de software indicam a existência de um
+                    padrão de projeto, porém ele não está implementado. As ocorrências de falsos padrões de projeto
+                    podem dificultar a compreensão, manutenção e evolução do software. Nesse contexto, foi construída 
+                    uma abordagem para detectar falsos padrões de projetos implementados na linguagem Java. Essa solução 
+                    foi avaliada em dezoito projetos <i>open-source</i> e através de três questões de pesquisa, foram 
+                    identificados 435 indícios de falsos padrões de projeto. Desses, foram detectados um conjunto de 
+                    202 ocorrências reais de falsos padrões de projeto. Em um dos projetos avaliados, foi obtido uma
+                    precisão de aproximadamente 81%. Além disso, foi possível relacionar os falsos padrões com algumas
+                    métricas de <i>software</i>. Identificar essas ocorrências possibilita uma melhor comunicação e 
+                    compreensão do código.
+                </p>
 
-						</ul>
-					<h3 id="novidades">Novidades</h3>
-					<hr class="divider"/>
+                <h3 id="start">Getting Started</h3>
+                <hr class="divider" />
 
-					<p>Versão 1.0 disponível. 21 de julho de 2016. Link para download: <a href="https://github.com/gpes/scm-extract.git" target="_blank">GitHub</a></p>
+                Clone o repositorio:
+                <pre><code>git clone https://github.com/gpes/false-pattern</code></pre><br>
+                
+                Execute (*Certifique-se que possue o Docker e Docker Compose instalados)
+                <pre><code>docker-compose up</code></pre><br>
 
-					<h3 id="desenvolvedores">Desenvolvedores</h3>
-					<hr class="divider"/>
-                    
-                    <div class="row">
-                        <div class="col-xs-6 col-md-6">
-                            <div class="thumbnail">
-                                  <img class="img-responsive img-circle" src="https://avatars1.githubusercontent.com/u/160657?s=400&v=4" alt="...">
-                                  <div class="caption text-center">
-                                    <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4241231A4" title="Lattes"><h3>Ricardo de Sousa Job</h3></a>
-                                    <p>Mestre em Ciência da Computação pela Universidade Federal de Campina Grande</p><br>
-                                </div>
+                Acesse:
+                <pre><code><a target="_blank">http://localhost:3000</a></code></pre>
+
+
+                <!-- <h3 id="exemplos">Exemplos de uso</h3>
+                <hr class="divider" />
+
+                <ul>
+                    <li>
+                        <a href="https://github.com/gpes/scm-extract/blob/master/src/main/java/br/edu/ifpb/scm/api/examples/CloneExample.java"
+                            target="_blank">
+                            Clonando um repositório remoto</a></li>
+
+                    <li><a href="https://github.com/gpes/scm-extract/blob/master/src/main/java/br/edu/ifpb/scm/api/examples/ReferenceRepositoryExample.java"
+                            target="_blank">Recuperando um repositório local</a></li>
+
+                    <li><a href="https://github.com/gpes/scm-extract/blob/master/src/main/java/br/edu/ifpb/scm/api/examples/CommitsInfoExample.java"
+                            target="_blank">Exibindo as informações de commits</a></li>
+
+                    <li><a href="https://github.com/gpes/scm-extract/blob/master/src/main/java/br/edu/ifpb/scm/api/examples/FilesChangedExamples.java"
+                            target="_blank">Exibindo quais arquivos foram modificados entre as versões</a></li>
+
+                    <li><a href="https://github.com/gpes/scm-extract/blob/jair_anderson/src/main/java/br/edu/ifpb/scm/api/examples/DiffVersionsExample.java"
+                            target="_blank">Exibindo as modificações entre as versões dos arquivos</a></li>
+                </ul> -->
+
+                <!-- <h3 id="novidades">Novidades</h3>
+                <hr class="divider" />
+
+                <p>Versão 1.0 disponível. 21 de julho de 2016. Link para download: <a
+                        href="https://github.com/gpes/scm-extract.git" target="_blank">GitHub</a></p> -->
+
+                <h3 id="desenvolvedores">Desenvolvedores</h3>
+                <hr class="divider" />
+
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <div class="thumbnail">
+                            <img class="img-responsive img-circle"
+                                src="https://avatars1.githubusercontent.com/u/160657?s=400&v=4" alt="...">
+                            <div class="caption text-center">
+                                <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4241231A4"
+                                    title="Lattes">
+                                    <h3>Ricardo de Sousa Job</h3>
+                                </a>
+                                <p>Mestre em Ciência da Computação pela Universidade Federal de Campina Grande</p><br>
                             </div>
-                          </div>
-    
-                        <div class="col-xs-6 col-md-6">
-                            <div class="thumbnail">
-                                  <img class="img-responsive img-circle" src="https://avatars0.githubusercontent.com/u/12945802?s=400&v=4" alt="...">
-                                  <div class="caption text-center">
-                                    <a href="#" ><h3>Natan da Silva Severo</h3></a>
-                                    <p>Graduando em Análise e Desenvolvimento de Sistemas pelo Instituto Federal da Paraíba Campus Cajazeiras</p>
-                                </div>
-                            </div>
-                          </div>
+                        </div>
                     </div>
-					
-					<h3 id="contato">Contato</h3>
-					<hr class="divider"/>
-					
-					<address>
-						<p ><a class="instituto" title= "Site IFPB" href="http://www.ifpb.edu.br/cajazeiras">Instituto Federal da Paraíba - Campus Cajazeiras</a><p>
-						<p>Rua José Antonio da Silva, 300. Jardim Oasis.
-						58900-000, Cajazeiras - PB.</p>
-					</address>
-				</div>
-			</div>
-		</div>
-				
-		<footer class="navbar navbar-bottom"></footer>			
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-	</body>
-	
+                    <div class="col-xs-6 col-md-6">
+                        <div class="thumbnail">
+                            <img class="img-responsive img-circle"
+                                src="https://avatars0.githubusercontent.com/u/12945802?s=400&v=4" alt="...">
+                            <div class="caption text-center">
+                                <a href="#">
+                                    <h3>Natan da Silva Severo</h3>
+                                </a>
+                                <p>Graduando em Análise e Desenvolvimento de Sistemas pelo Instituto Federal da Paraíba
+                                    Campus Cajazeiras</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="contato">Contato</h3>
+                <hr class="divider" />
+
+                <address>
+                    <p><a class="instituto" title="Site IFPB" href="http://www.ifpb.edu.br/cajazeiras">Instituto Federal
+                            da Paraíba - Campus Cajazeiras</a>
+                        <p>
+                            <p>Rua José Antonio da Silva, 300. Jardim Oasis.
+                                58900-000, Cajazeiras - PB.</p>
+                </address>
+            </div>
+        </div>
+    </div>
+
+    <footer class="navbar navbar-bottom"></footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+
 </html>
